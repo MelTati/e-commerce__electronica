@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Este enlace se utiliza para aplicar los estilos css-->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>SmartPoint</title>
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__top">
+      <p class="header__info">Envío gratis en compras mayores a $50.00</p>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#help" class="header__nav-link">Ayuda</a></li>
+          <li class="header__nav-item"><a href="#contact" class="header__nav-link">Contacto</a></li>
+          <li class="header__nav-item"><a href="#about" class="header__nav-link">Acerca de</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header__container">
+      <div class="header__logo">
+        <a href="#"><img src="img/logo.png" alt="Logo de SmartPoint"></a>
+      </div>
+
+      <div class="header__search">
+          <label for="search"></label><input id="search" type="search" class="header__search-input" placeholder="Busca tus productos..." />
+      </div>
+
+      <div class="header__user">
+        <a href="#login" class="header__user-link header__user-link--login">Iniciar Sesión</a>
+        <a href="#register" class="header__user-link header__user-link--register">Registrarse</a>
+      </div>
+
+      <div class="header__actions">
+        <a href="#cart" class="header__cart" aria-label="Carrito de compras">
+          <span class="header__cart-total">$0.00</span>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </div>
+    </div>
+
+    <nav class="header__menu">
+      <ul class="header__menu-list">
+        <li class="header__menu-item"><a href="#services" class="header__menu-link"><i class="fa-solid fa-bars"></i> Services</a></li>
+        <li class="header__menu-item"><a href="#smd" class="header__menu-link"><i class="fa-solid fa-microchip"></i> SMD</a></li>
+        <li class="header__menu-item"><a href="#components" class="header__menu-link"><i class="fa-solid fa-plug"></i> Components</a></li>
+        <li class="header__menu-item"><a href="#kits" class="header__menu-link"><i class="fa-solid fa-box"></i> Kits</a></li>
+        <li class="header__menu-item"><a href="#brands" class="header__menu-link"><i class="fa-solid fa-tags"></i> Brands</a></li>
+        <li class="header__menu-item"><a href="#lab" class="header__menu-link"><i class="fa-solid fa-flask"></i> Laboratory</a></li>
+        <li class="header__menu-item"><a href="#energy" class="header__menu-link"><i class="fa-solid fa-bolt"></i> Energy</a></li>
+        <li class="header__menu-item"><a href="#cards" class="header__menu-link"><i class="fa-solid fa-credit-card"></i> Cards</a></li>
+        <li class="header__menu-item"><a href="#sensors" class="header__menu-link"><i class="fa-solid fa-radar"></i> Sensors</a></li>
+        <li class="header__menu-item"><a href="#modules" class="header__menu-link"><i class="fa-solid fa-cubes"></i> Modules</a></li>
+        <li class="header__menu-item"><a href="#opto" class="header__menu-link"><i class="fa-solid fa-lightbulb"></i> Optoelectronics</a></li>
+        <li class="header__menu-item"><a href="#robotics" class="header__menu-link"><i class="fa-solid fa-robot"></i> Robotics</a></li>
+        <li class="header__menu-item"><a href="#outlet" class="header__menu-link"><i class="fa-solid fa-tags"></i> Outlet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="main__ecommerce">
+      <h1 class="main__title">Bienvenidos a Smart Point</h1>
+      <p class="main__subtitle">Encontrarás la tienda de electrónica</p>
+
+      <section class="slideshow" aria-label="Galería de imágenes">
+        <figure class="slideshow__slide fade">
+          <img src="img/img1.webp" alt="Imagen de producto 1" class="slideshow__image">
+          <figcaption class="slideshow__caption">
+            <span class="slideshow__number">1 / 3</span>
+            Caption Text
+          </figcaption>
+        </figure>
+
+        <figure class="slideshow__slide fade">
+          <img src="img/img2.webp" alt="Imagen de producto 2" class="slideshow__image">
+          <figcaption class="slideshow__caption">
+            <span class="slideshow__number">2 / 3</span>
+            Caption Two
+          </figcaption>
+        </figure>
+
+        <figure class="slideshow__slide fade">
+          <img src="img/img3.jpg" alt="Imagen de producto 3" class="slideshow__image">
+          <figcaption class="slideshow__caption">
+            <span class="slideshow__number">3 / 3</span>
+            Caption Three
+          </figcaption>
+        </figure>
+
+        <button class="slideshow__button slideshow__button--prev" aria-label="Imagen anterior" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="slideshow__button slideshow__button--next" aria-label="Siguiente imagen" onclick="plusSlides(1)">&#10095;</button>
+      </section>
+
+      <div class="slideshow__dots">
+        <button class="slideshow__dot" onclick="currentSlide(1)" aria-label="Ir a la imagen 1"></button>
+        <button class="slideshow__dot" onclick="currentSlide(2)" aria-label="Ir a la imagen 2"></button>
+        <button class="slideshow__dot" onclick="currentSlide(3)" aria-label="Ir a la imagen 3"></button>
+      </div>
+    </section>
+
+    <section class="main__categories">
+        <h3 class="category__title">Departamentos</h3>
+        <div class="categories__grid">
+          <div class="subcategory__item">
+            <img src="img/Audio.svg" alt="Audio" class="subcategory__image">
+            <span>Audio</span>
+          </div>
+          <div class="subcategory__item">
+            <img src="img/comunicacion.png" alt="Comunicación" class="subcategory__image">
+            <span>Comunicación</span>
+          </div>
+          <div class="subcategory__item">
+            <img src="img/computadora.png" alt="Cómputo" class="subcategory__image">
+            <span>Cómputo</span>
+          </div>
+          <div class="subcategory__item">
+            <img src="img/computadora.png" alt="Electrónica" class="subcategory__image">
+            <span>Electrónica</span>
+          </div>
+        </div>
+
+        <h3 class="category__title">Marcas</h3>
+        <div class="categories__grid">
+          <div class="subcategory__item">
+            <img src="img/Audio.svg" alt="Audio" class="subcategory__image">
+            <span>Audio</span>
+          </div>
+          <div class="subcategory__item">
+            <img src="img/comunicacion.png" alt="Comunicación" class="subcategory__image">
+            <span>Comunicación</span>
+          </div>
+          <div class="subcategory__item">
+            <img src="img/computadora.png" alt="Cómputo" class="subcategory__image">
+            <span>Cómputo</span>
+          </div>
+          <div class="subcategory__item">
+            <img src="img/computadora.png" alt="Electrónica" class="subcategory__image">
+            <span>Electrónica</span>
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">&copy; 2024 SmartPoint. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
