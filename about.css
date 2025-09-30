@@ -1,7 +1,8 @@
-/*Aqui estan los estilos de la pagina acerca*/
+
 .about {
-    background-color: #fff;
+    background-color: var(--background-color);
     padding: 2.5rem 1.5rem;
+    color: var(--text-color);
 }
 
 .about__container {
@@ -14,12 +15,12 @@
     font-weight: 600;
     color: var(--secondary-color);
     margin-bottom: 1.2rem;
+    font-family: var(--font-family), sans-serif;
 }
 
 .about__content {
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--text-color);
 }
 
 .about__text {
