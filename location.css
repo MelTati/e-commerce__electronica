@@ -1,0 +1,63 @@
+.location {
+    padding: 2rem;
+}
+
+.location__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.location__info {
+    flex: 1;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-top: var(--secondary-color) solid 4px;
+
+}
+
+.location__title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.location__details {
+    margin-bottom: 1rem;
+}
+
+.location__detail {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.location__schedule {
+    border: none;
+    overflow: hidden;
+
+}
+
+.location__schedule-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid #eee;
+}
+
+.location__schedule-item:last-child {
+    border-bottom: none;
+}
+
+.location__map {
+    flex: 1;
+    min-width: 350px;
+    height: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

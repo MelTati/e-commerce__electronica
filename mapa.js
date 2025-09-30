@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const marker = L.marker([latitud, longitud]).addTo(map);
 
-    marker.bindPopup("<b>Smart Point</b><br>Tuxtla Gutiérrez, Chiapas").openPopup();
+    // Popup con logo de la empresa
+    marker.bindPopup(`
+        <div style="text-align:center;">
+            <img src="img/logo.png" alt="Logo Smart Point" style="width:80px; height:auto; margin-bottom:5px;">
+            <br>
+            <b>Smart Point</b><br>
+            Tuxtla Gutiérrez, Chiapas
+        </div>
+    `).openPopup();
 });
-
-

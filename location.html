@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - Smart Point</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="location.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="header-container"></div>
+
+<main class="main">
+    <section class="location">
+
+        <div class="location__container">
+
+            <div class="location__info">
+                <h1 class="location__title">Nuestra Ubicación</h1>
+
+                <div class="location__details">
+                    <p class="location__detail"><strong>Dirección:</strong> Tuxtla Gutiérrez, Chiapas, México.</p>
+                    <p class="location__detail"><strong>WhatsApp:</strong> (961) 345 7829</p>
+                    <p class="location__detail"><strong>Email:</strong> tuxtla@smartpoint.com</p>
+                    <p class="location__detail"><strong>Link:</strong> Smart Point- Tuxtla Gutierrez Chis.</p>
+                </div>
+
+                <!-- Horario -->
+                <div class="location__schedule">
+                    <div class="location__schedule-item"><span>Dom:</span><span>Cerrado</span></div>
+                    <div class="location__schedule-item"><span>Lun:</span><span>09:00 - 19:00</span></div>
+                    <div class="location__schedule-item"><span>Mar:</span><span>09:00 - 19:00</span></div>
+                    <div class="location__schedule-item"><span>Mié:</span><span>09:00 - 19:00</span></div>
+                    <div class="location__schedule-item"><span>Jue:</span><span>09:00 - 19:00</span></div>
+                    <div class="location__schedule-item"><span>Vie:</span><span>09:00 - 19:00</span></div>
+                    <div class="location__schedule-item"><span>Sáb:</span><span>10:00 - 14:00</span></div>
+                </div>
+            </div>
+
+            <div class="location__map" id="map"></div>
+
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="mapa.js"></script>
+<script src="load-header.js"></script>
+<script src="load-footer.js"></script>
+</body>
+</html>
