@@ -2,42 +2,36 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ubicación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - Smart Point</title>
 
-    <!-- 1. Incluye los CSS de Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-          crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <link rel="stylesheet" href="styles.css">
 
-    <style>
-
-        #map {
-            width: 100%;
-            height: calc(100vh - 60px);
-            position: relative;
-            border: #1E7765 1px solid;
-        }
-
-        #header-container {
-            height: 60px;
-            width: 100%;
-        }
-    </style>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="header-container"></div>
 
-<!-- 3. Div que contendrá el mapa -->
-<div id="map"></div>
+<main class="main-container">
+    <section class="location-section">
+        <div class="location-card">
+            <h1>Nuestra Ubicación</h1>
+            <div class="address-details">
+                <p><strong>Dirección:</strong> Tuxtla Gutiérrez, Chiapas, México.</p>
+                <p><strong>Horario:</strong> Lunes a Viernes de 9:00 a 18:00 hrs.</p>
+            </div>
+            <div id="map"></div>
+        </div>
+    </section>
+</main>
 
-<!-- 4. Scripts de Leaflet y tu código -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-o9N1j6kHfG1f7XN4e3xoE6ZPdHsyb9gq5u5QGI4c+oM="
-        crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="mapa.js"></script>
 <script src="load-header.js"></script>
 </body>
 </html>
+
+

@@ -1,15 +1,16 @@
-// Inicializa el mapa en el div con id="map"
+document.addEventListener('DOMContentLoaded', function () {
+    const latitud = 16.759278;
+    const longitud = -93.172444;
 
-const coordinates = [19.432608, -99.133209];
+    const map = L.map('map').setView([latitud, longitud], 17);
 
-var map = L.map('map').setView(coordinates, 17);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
 
-// Añade la capa de mosaicos (tiles) de OpenStreetMap
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+    const marker = L.marker([latitud, longitud]).addTo(map);
 
-// Añade un marcador con popup
-var marker = L.marker([40.416775, -3.703790]).addTo(map);
-marker.bindPopup("<b>¡Madrid!</b><br>Una ciudad increíble.").openPopup();
+    marker.bindPopup("<b>Smart Point</b><br>Tuxtla Gutiérrez, Chiapas").openPopup();
+});
+
+

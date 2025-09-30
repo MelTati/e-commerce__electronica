@@ -556,3 +556,72 @@ body {
     }
 }
 
+/* Página de Ubicación */
+
+.location-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.location-card {
+    background-color: var(--color-background-main);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 900px;
+    border-top: 5px solid var(--color-primary-brand);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.location-card h1 {
+    font-family: var(--font-family-headings);
+    color: var(--color-primary-brand);
+    margin: 0;
+}
+
+.address-details {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.address-details p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+#map {
+    width: 100%;
+    min-height: 300px;   /* 🔹 altura mínima para pantallas pequeñas */
+    height: 45vh;        /* 🔹 relativo a la altura de la ventana */
+    max-height: 500px;   /* 🔹 límite superior */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1;          /* 🔹 asegura visibilidad */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .location-card {
+        padding: 1.5rem;
+    }
+
+    #map {
+        height: 40vh;
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    #map {
+        height: 35vh;
+        min-height: 200px;
+    }
+}
+
