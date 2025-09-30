@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ubicación</title>
+
+    <!-- 1. Incluye los CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+
+        #map {
+            width: 100%;
+            height: calc(100vh - 60px);
+            position: relative;
+            border: #1E7765 1px solid;
+        }
+
+        #header-container {
+            height: 60px;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+<div id="header-container"></div>
+
+<!-- 3. Div que contendrá el mapa -->
+<div id="map"></div>
+
+<!-- 4. Scripts de Leaflet y tu código -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-o9N1j6kHfG1f7XN4e3xoE6ZPdHsyb9gq5u5QGI4c+oM="
+        crossorigin=""></script>
+<script src="mapa.js"></script>
+<script src="load-header.js"></script>
+</body>
+</html>
