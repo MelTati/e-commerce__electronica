@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family), sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.5;
@@ -272,7 +272,7 @@ main {
 
 .categories__title {
     text-align: center;
-    font-family: var(--font-family);
+    font-family: var(--font-family), sans-serif;
     color: var(--secondary-color);
     font-size: 1.5rem;
     font-weight: 700;

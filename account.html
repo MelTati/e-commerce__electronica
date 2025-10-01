@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Account</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="account.css">
+
+</head>
+<body>
+
+<div id="header-container"></div>
+
+<main class="main">
+    <section class="login">
+
+        <div class="login__image">
+            <div class="login__image-container">
+                <div class="login__text">
+                    <h2 class="login__title">Bienvenido a Smart Point</h2>
+                    <p class="login__subtitle">Inicia sesión para continuar</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="login__form">
+            <form class="login__form-container">
+
+                <!-- Campo email -->
+                <div class="login__form-group">
+                    <div class="login__floating-label">
+                        <input
+                                type="email"
+                                id="login-email"
+                                class="login__input"
+                                placeholder=" "
+                                required
+                        />
+                        <label for="login-email" class="login__label">Email</label>
+                        <div class="login__icon login__icon--email"></div>
+                    </div>
+                </div>
+
+                <!-- Campo password -->
+                <div class="login__form-group">
+                    <div class="login__floating-label">
+                        <input
+                                type="password"
+                                id="login-password"
+                                class="login__input"
+                                placeholder=" "
+                                required
+                        />
+                        <label for="login-password" class="login__label">Password</label>
+                        <div class="login__icon login__icon--password"></div>
+                    </div>
+                </div>
+
+                <!-- Botón -->
+                <button type="submit" class="login__button">
+                    Ingresar
+                </button>
+
+                <!-- Link de recuperación -->
+                <div class="login__forgot">
+                    <a href="/forgot-password" class="login__forgot-link">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Footer dinámico -->
+<div id="footer-container"></div>
+
+<script src="load-header.js"></script>
+<script src="load-footer.js"></script>
+</body>
+</html>
