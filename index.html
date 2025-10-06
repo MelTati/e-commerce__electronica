@@ -38,14 +38,26 @@
             <!-- Cada figura representa una diapositiva -->
             <figure class="slideshow__slide fade">
                 <img src="img/img1.webp" alt="Imagen de producto 1" class="slideshow__image">
+                <figcaption class="slideshow__caption">
+                    <span class="slideshow__number">1 / 3</span>
+                    Caption Text
+                </figcaption>
             </figure>
 
             <figure class="slideshow__slide fade">
                 <img src="img/img2.webp" alt="Imagen de producto 2" class="slideshow__image">
+                <figcaption class="slideshow__caption">
+                    <span class="slideshow__number">2 / 3</span>
+                    Caption Two
+                </figcaption>
             </figure>
 
             <figure class="slideshow__slide fade">
                 <img src="img/img3.jpg" alt="Imagen de producto 3" class="slideshow__image">
+                <figcaption class="slideshow__caption">
+                    <span class="slideshow__number">3 / 3</span>
+                    Caption Three
+                </figcaption>
             </figure>
 
             <!-- Botones de navegación del slideshow -->
@@ -100,76 +112,75 @@
                 <img src="img/NVIDIA.webp" alt="nvidia" class="categories__image">
             </div>
             <div class="categories__item">
-                <img src="img/RASPBERRY.webp" alt="raspberry" class="categories__image">
+                <img src="img/RASPBERRY.webp" alt="rasberry" class="categories__image">
             </div>
             <div class="categories__item">
                 <img src="img/ARDUINO.webp" alt="arduino" class="categories__image">
             </div>
             <div class="categories__item">
-                <img src="img/seedstudio.webp" alt="SeedStudio" class="categories__image">
+                <img src="img/seedstudio.webp" alt="seedStudio" class="categories__image">
             </div>
             <div class="categories__item">
-                <img src="img/unitelectronics.webp" alt="Unite Electronics" class="categories__image">
+                <img src="img/unitelectronics.webp" alt="seedStudio" class="categories__image">
             </div>
         </div>
 
         <!-- Tercera sección de categorías con precios y botón de carrito -->
         <div class="categories__header">
-            <h3 class="categories__title">Kit de Electrónica y Robótica</h3>
+            <h3 class="categories__title">Kit de Electronica y Robotica</h3>
         </div>
 
         <div class="categories__grid">
             <div class="categories__item">
-                <img src="img/superkit.jpg" alt="SuperKit" class="categories__image">
+                <img src="img/superkit.jpg" alt="superkit" class="categories__image">
                 <span class="categories__label">SuperKit</span>
                 <p class="categories__price">$699.00</p>
                 <button class="categories__button">Añadir Al Carrito</button>
             </div>
             <div class="categories__item">
-                <img src="img/NVIDIA.webp" alt="NVIDIA" class="categories__image">
+                <img src="img/NVIDIA.webp" alt="nvidia" class="categories__image">
                 <span class="categories__label">NVIDIA</span>
                 <p class="categories__price">$699.00</p>
                 <button class="categories__button">Añadir Al Carrito</button>
             </div>
             <div class="categories__item">
-                <img src="img/RASPBERRY.webp" alt="Raspberry" class="categories__image">
-                <span class="categories__label">Raspberry</span>
+                <img src="img/RASPBERRY.webp" alt="rasberry" class="categories__image">
+                <span class="categories__label">RASPBERRY</span>
                 <p class="categories__price">$699.00</p>
                 <button class="categories__button">Añadir Al Carrito</button>
             </div>
             <div class="categories__item">
-                <img src="img/ARDUINO.webp" alt="Arduino" class="categories__image">
-                <span class="categories__label">Arduino</span>
+                <img src="img/ARDUINO.webp" alt="arduino" class="categories__image">
+                <span class="categories__label">ARDUINO</span>
                 <p class="categories__price">$699.00</p>
                 <button class="categories__button">Añadir Al Carrito</button>
             </div>
             <div class="categories__item">
-                <img src="img/seedstudio.webp" alt="SeedStudio" class="categories__image">
+                <img src="img/seedstudio.webp" alt="seedStudio" class="categories__image">
                 <span class="categories__label">SeedStudio</span>
                 <p class="categories__price">$699.00</p>
                 <button class="categories__button">Añadir Al Carrito</button>
             </div>
             <div class="categories__item">
-                <img src="img/unitelectronics.webp" alt="Unite Electronics" class="categories__image">
+                <img src="img/unitelectronics.webp" alt="seedStudio" class="categories__image">
                 <span class="categories__label">Unite Electronics</span>
                 <p class="categories__price">$699.00</p>
-                <button class="categories__button" onclick="location.href='product-detail.html'">
-                    Ver Detalle
-                </button>
+                <button class="categories__button">Añadir Al Carrito</button>
             </div>
         </div>
+
     </section>
+
 </main>
 
-<!-- Contenedor para el footer -->
-<div id="footer-container"></div>
+<!-- Pie de página -->
+<footer class="footer">
+    <p class="footer__text">&copy; 2024 SmartPoint. Todos los derechos reservados.</p>
+</footer>
 
 <!-- Scripts JS -->
 <script src="app.js"></script>
 <!-- Script para cargar dinámicamente el header -->
 <script src="load-header.js"></script>
-<!-- Script para cargar dinámicamente el footer -->
-<script src="load-footer.js"></script>
-
 </body>
 </html>
