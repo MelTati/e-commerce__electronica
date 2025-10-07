@@ -1,14 +1,20 @@
-
-// Solicito el archivo 'header.html' desde el servidor
 fetch('header.html')
-    // Cuando la solicitud sea exitosa, convertir la respuesta en texto
     .then(response => response.text())
-    // Con el contenido del archivo (HTML) disponible
     .then(data => {
-        // Insertar el HTML del header dentro del contenedor con id 'header-container'
+        // Paso 1: Inserta el HTML del header en el contenedor
         document.getElementById('header-container').innerHTML = data;
+
+        // Paso 2: DESPUÉS de insertar el HTML, busca los elementos del menú
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mainMenu = document.getElementById('main-menu');
+
+        // Paso 3: Añade el evento de 'click' para mostrar/ocultar el menú
+        if (hamburgerBtn && mainMenu) {
+            hamburgerBtn.addEventListener('click', () => {
+                mainMenu.classList.toggle('header__menu--open');
+            });
+        }
     })
-    // Capturar cualquier error que ocurra durante la solicitud
     .catch(error =>
-        console.error('Error al cargar el header:', error) // Mostrar mensaje de error en consola
+        console.error('Error al cargar o activar el header:', error)
     );

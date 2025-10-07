@@ -1,26 +1,5 @@
-
-:root {
-    --color-primary-brand: #1E7765;
-    --color-primary-cta: #007BFF;
-    --color-text-primary: #333333;
-    --color-text-secondary: #555555;
-    --color-background-main: #FFFFFF;
-    --color-background-subtle: #F8F9FA;
-    --color-border: #DEE2E6;
-    --color-border-focus: #007BFF;
-    --font-family-headings: 'Montserrat', sans-serif;
-    --font-family-body: 'Open Sans', sans-serif;
-    --border-radius: 8px;
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-
 body {
-    font-family: var(--font-family-body), serif;
-    color: var(--color-text-primary);
-    background-color: var(--color-background-subtle);
-    line-height: 1.6;
-    margin: 0;
+    background-color: var(--background-color);
 }
 
 .main-container {
@@ -37,18 +16,19 @@ body {
 }
 
 .contact-card {
-    background-color: var(--color-background-main);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     padding: 2.5rem;
     width: 100%;
     max-width: 700px;
-    border-top: 5px solid var(--color-primary-brand);
+    border-top: 5px solid var(--secondary-color);
+    border: 1px solid var(--border-color);
 }
 
 .contact-card h1 {
-    font-family: var(--font-family-headings),serif;
-    color: var(--color-primary-brand);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color);
     text-align: center;
     margin-top: 0;
     margin-bottom: 1rem;
@@ -56,7 +36,7 @@ body {
 
 .contact-intro {
     text-align: center;
-    color: var(--color-text-secondary);
+    color: var(--text-color-secondary);
     margin-bottom: 2.5rem;
     font-size: 1.1rem;
 }
@@ -70,7 +50,7 @@ body {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--color-text-primary);
+    color: var(--text-color);
 }
 
 .form-group input[type="text"],
@@ -80,12 +60,13 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 0.8rem 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     font-size: 1rem;
-    font-family: var(--font-family-body), serif;
+    font-family: 'Open Sans', sans-serif;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    background-color: #fff;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 
@@ -93,8 +74,8 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-border-focus);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(57, 146, 232, 0.3);
 }
 
 .form-group textarea {
@@ -107,9 +88,9 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     color: #fff;
-    background-color: var(--color-primary-cta);
+    background-color: var(--primary-color);
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease;
     text-transform: uppercase;
@@ -124,22 +105,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    .main-container {
-        margin: 1rem auto;
-    }
-
-    .contact-card {
-        padding: 1.5rem;
-    }
-
-    .contact-card h1 {
-        font-size: 1.8rem;
-    }
-
-    .contact-intro {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-    }
+    .main-container { margin: 1rem auto; }
+    .contact-card { padding: 1.5rem; }
+    .contact-card h1 { font-size: 1.8rem; }
+    .contact-intro { font-size: 1rem; margin-bottom: 2rem; }
 }
-
-
