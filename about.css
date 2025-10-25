@@ -1,6 +1,6 @@
 .about {
     background-color: var(--background-color);
-    padding: 2.5rem 1.5rem;
+    padding: 3rem 1.5rem; /* Más padding vertical */
     color: var(--text-color);
 }
 
@@ -10,20 +10,28 @@
 }
 
 .about__title {
-    font-size: 1.8rem;
+    font-size: 1.75rem; /* Ligeramente más pequeño */
     font-weight: 600;
     color: var(--secondary-color);
-    margin-bottom: 1.2rem;
-    font-family: var(--font-family), sans-serif;
+    margin-bottom: 1.5rem; /* Más margen */
+    border-bottom: 1px solid var(--border-color); /* Línea divisoria sutil */
+    padding-bottom: 0.5rem;
 }
 
 .about__content {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7; /* Mayor interlineado */
+    color: var(--text-color-secondary); /* Texto secundario por defecto */
+}
+.about__content strong {
+    color: var(--text-color); /* Resaltar negritas */
+    font-weight: 500;
 }
 
+/* --- CORRECCIÓN AQUÍ: Texto justificado --- */
 .about__text {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: justify; /* Añadido para justificar el texto */
 }
 
 .about__highlight {
@@ -31,61 +39,125 @@
     font-weight: 600;
 }
 
+/* --- Founders Section --- */
 .founders__container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    display: grid; /* Usar Grid para mejor alineación */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas adaptables */
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .founder__card {
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 1.5rem 1rem;
-    width: 220px;
+    border-radius: var(--border-radius-lg); /* Bordes más redondeados */
+    padding: 1.5rem;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: var(--shadow-md);
 }
 .founder__card:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .founder__img {
-    width: 120px;
-    height: 120px;
+    width: 100px; /* Más pequeño */
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto; /* Centrar horizontalmente */
     cursor: pointer;
+    display: block;
 }
 
 .founder__name {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Más pequeño */
     font-weight: 600;
     color: var(--text-color);
     margin-bottom: 0.25rem;
 }
 
 .founder__title {
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Más pequeño */
     color: var(--text-color-secondary);
 }
 
-/* Modal Styles */
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
-.modal__content { margin: auto; display: block; max-width: 80%; max-height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: zoom 0.4s; }
-.modal__close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
-#caption { text-align: center; color: #ccc; padding: 10px 0; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); animation: fadeIn 0.4s; }
-@keyframes zoom { from {transform: translate(-50%, -50%) scale(0.1)} to {transform: translate(-50%, -50%) scale(1)} }
+/* --- Modal Styles */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(17, 24, 39, 0.9); /* Fondo azul oscuro traslúcido */ }
+.modal__content {
+    margin: auto; display: block;
+    max-width: 90%; max-height: 80%; /* Ajustar tamaño máximo */
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoom 0.3s ease-out; /* Animación más suave */
+    border-radius: var(--border-radius-sm); /* Bordes suaves a la imagen */
+}
+.modal__close {
+    position: absolute; top: 20px; right: 30px;
+    color: #fff; font-size: 2.5rem; font-weight: bold; cursor: pointer;
+    transition: transform 0.2s;
+}
+.modal__close:hover { transform: scale(1.1); color: #ccc; }
+#caption {
+    text-align: center; color: #ccc; padding: 15px 0; /* Más padding */
+    position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);
+    animation: fadeIn 0.4s ease-out; font-size: 0.9rem;
+    width: 80%;
+}
+@keyframes zoom { from {transform: translate(-50%, -50%) scale(0.5); opacity: 0;} to {transform: translate(-50%, -50%) scale(1); opacity: 1;} }
 @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
 
+/* --- Responsive About --- */
 @media (max-width: 768px) {
     .about { padding: 2rem 1rem; }
     .about__title { font-size: 1.5rem; text-align: left; }
     .about__content { font-size: 0.95rem; }
-    .founders__container { flex-direction: column; align-items: center; gap: 2rem; }
-    .founder__card { width: 80%; max-width: 280px; }
+    .founders__container { grid-template-columns: 1fr; gap: 1.5rem; } /* Apilar en una columna */
+    .founder__card { max-width: 300px; margin: 0 auto; } /* Centrar tarjetas */
+}
+
+/* --- Estilos Adicionales para Valores --- */
+.values__list {
+    margin-top: 1.5rem; /* Espacio antes de la lista */
+    display: grid; /* Usar grid para alinear */
+    gap: 1.5rem; /* Espacio entre valores */
+}
+
+.value__item {
+    background-color: var(--surface-color); /* Fondo ligero */
+    padding: 1.5rem; /* Espaciado interno */
+    border-radius: var(--border-radius-md); /* Bordes redondeados */
+    border-left: 4px solid var(--primary-color); /* Línea decorativa azul */
+}
+
+.value__title {
+    display: flex; /* Alinear icono y texto */
+    align-items: center;
+    gap: 0.8rem; /* Espacio entre icono y texto */
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+}
+
+.icon--value {
+    color: var(--primary-color); /* Icono en azul */
+    font-size: 1.2rem; /* Tamaño del icono */
+    width: 20px; /* Ancho fijo para alineación */
+    text-align: center;
+}
+
+.value__item .about__text {
+    margin-bottom: 0;
+    color: var(--text-color-secondary); /* Texto descriptivo en gris */
+    padding-left: calc(20px + 0.8rem); /* Alinear descripción con el texto del título */
+    /* text-align: justify; Ya se aplica a .about__text globalmente */
+}
+
+@media (min-width: 600px) {
+    .values__list {
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+    }
 }

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Account</title>
-    <link rel="stylesheet" href="../styles.css">
+    <title>Cuenta - SmartPoint</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="account.css">
-
 </head>
 <body>
 
@@ -25,7 +24,6 @@
 
         <div class="login__form">
             <form class="login__form-container">
-                <!-- Campo email -->
                 <div class="login__form-group login__container-title">
                     <p class="login__subtitle">Inicia sesión para continuar</p>
                 </div>
@@ -38,12 +36,10 @@
                                 placeholder=" "
                                 required
                         />
-                        <label for="login-email" class="login__label">Email</label>
-                        <div class="login__icon login__icon--email"></div>
+                        <label for="login-email" class="login__label">Correo Electrónico</label>
                     </div>
                 </div>
 
-                <!-- Campo password -->
                 <div class="login__form-group">
                     <div class="login__floating-label">
                         <input
@@ -53,17 +49,14 @@
                                 placeholder=" "
                                 required
                         />
-                        <label for="login-password" class="login__label">Password</label>
-                        <div class="login__icon login__icon--password"></div>
+                        <label for="login-password" class="login__label">Contraseña</label>
                     </div>
                 </div>
 
-                <!-- Botón -->
                 <button type="submit" class="login__button">
                     Ingresar
                 </button>
 
-                <!-- Link de recuperación -->
                 <div class="login__forgot">
                     <a href="/forgot-password" class="login__forgot-link">¿Olvidaste tu contraseña?</a>
                 </div>
@@ -72,7 +65,6 @@
     </section>
 </main>
 
-<!-- Footer dinámico -->
 <div id="footer-container"></div>
 
 <script src="load-header.js"></script>

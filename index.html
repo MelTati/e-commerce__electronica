@@ -1,85 +1,46 @@
 <!DOCTYPE html>
-<!-- Define el tipo de documento como HTML5 -->
 <html lang="es">
-<!-- Define el idioma del documento como español -->
 <head>
     <meta charset="UTF-8">
-    <!-- Configuración de codificación de caracteres para soportar acentos y caracteres especiales -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configuración para que la página sea responsiva en dispositivos móviles -->
-
-    <!-- Este enlace se utiliza para aplicar los estilos CSS externos -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Este enlace se utiliza para incluir los iconos de Font Awesome en el sitio web -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Icono que aparecerá en la pestaña del navegador -->
     <link rel="icon" href="img/logo.png">
-
-    <!-- Título de la página web -->
     <title>SmartPoint</title>
 </head>
 <body>
 
-<!-- Contenedor para cargar el header de manera externa mediante JavaScript -->
 <div id="header-container"></div>
 
 <main>
-    <!-- Sección principal de la página tipo e-commerce -->
     <section class="main__ecommerce">
-        <!-- Título principal de la página -->
         <h1 class="main__title">Bienvenidos a Smart Point</h1>
-        <!-- Subtítulo de la página -->
         <p class="main__subtitle">Encontrarás la tienda de electrónica</p>
 
-        <!-- Sección de slideshow o carrusel de imágenes -->
         <section class="slideshow" aria-label="Galería de imágenes">
-            <!-- Cada figura representa una diapositiva -->
             <figure class="slideshow__slide fade">
-                <img src="img/img1.webp" alt="Imagen de producto 1" class="slideshow__image">
-                <figcaption class="slideshow__caption">
-                    <span class="slideshow__number">1 / 3</span>
-                    Caption Text
-                </figcaption>
+                <img src="img/img1.webp" alt="Impresión 3D Bambu Lab" class="slideshow__image">
             </figure>
-
             <figure class="slideshow__slide fade">
-                <img src="img/img2.webp" alt="Imagen de producto 2" class="slideshow__image">
-                <figcaption class="slideshow__caption">
-                    <span class="slideshow__number">2 / 3</span>
-                    Caption Two
-                </figcaption>
+                <img src="img/img2.webp" alt="Nuevas Tarjetas UNIT" class="slideshow__image">
             </figure>
-
             <figure class="slideshow__slide fade">
-                <img src="img/img3.jpg" alt="Imagen de producto 3" class="slideshow__image">
-                <figcaption class="slideshow__caption">
-                    <span class="slideshow__number">3 / 3</span>
-                    Caption Three
-                </figcaption>
+                <img src="img/img3.jpg" alt="Touch Dot S3" class="slideshow__image">
             </figure>
-
-            <!-- Botones de navegación del slideshow -->
-            <button class="slideshow__button slideshow__button--prev" aria-label="Imagen anterior" onclick="plusSlides(-1)">&#10094;</button>
-            <button class="slideshow__button slideshow__button--next" aria-label="Siguiente imagen" onclick="plusSlides(1)">&#10095;</button>
+            <button class="slideshow__button slideshow__button--prev" aria-label="Imagen anterior" onclick="plusSlides(-1)">❮</button>
+            <button class="slideshow__button slideshow__button--next" aria-label="Siguiente imagen" onclick="plusSlides(1)">❯</button>
+            <div class="slideshow__dots">
+                <button class="slideshow__dot" onclick="currentSlide(1)" aria-label="Ir a la imagen 1"></button>
+                <button class="slideshow__dot" onclick="currentSlide(2)" aria-label="Ir a la imagen 2"></button>
+                <button class="slideshow__dot" onclick="currentSlide(3)" aria-label="Ir a la imagen 3"></button>
+            </div>
         </section>
-
-        <!-- Botones de navegación tipo "puntos" del slideshow -->
-        <div class="slideshow__dots">
-            <button class="slideshow__dot" onclick="currentSlide(1)" aria-label="Ir a la imagen 1"></button>
-            <button class="slideshow__dot" onclick="currentSlide(2)" aria-label="Ir a la imagen 2"></button>
-            <button class="slideshow__dot" onclick="currentSlide(3)" aria-label="Ir a la imagen 3"></button>
-        </div>
     </section>
 
-    <!-- Sección de categorías principales de productos -->
-    <section class="main__categories">
-        <!-- Encabezado de la primera categoría -->
+    <section class="main__categories main__ecommerce">
         <div class="categories__header">
             <h3 class="categories__title">Departamentos</h3>
         </div>
-        <!-- Grid con los ítems de la categoría -->
         <div class="categories__grid">
             <div class="categories__item">
                 <img src="img/Audio.png" alt="Audio" class="categories__image">
@@ -99,88 +60,96 @@
             </div>
         </div>
 
-        <!-- Segunda sección de categorías -->
         <div class="categories__header">
             <h3 class="categories__title">Ecosistemas de Desarrollo</h3>
         </div>
-
         <div class="categories__grid">
             <div class="categories__item">
-                <img src="img/SILIMEX.jpg" alt="silmex" class="categories__image">
+                <img src="img/SILIMEX.jpg" alt="Silimex" class="categories__image">
             </div>
             <div class="categories__item">
-                <img src="img/NVIDIA.webp" alt="nvidia" class="categories__image">
+                <img src="img/NVIDIA.webp" alt="NVIDIA" class="categories__image">
             </div>
             <div class="categories__item">
-                <img src="img/RASPBERRY.webp" alt="rasberry" class="categories__image">
+                <img src="img/RASPBERRY.webp" alt="Raspberry Pi" class="categories__image">
             </div>
             <div class="categories__item">
-                <img src="img/ARDUINO.webp" alt="arduino" class="categories__image">
+                <img src="img/ARDUINO.webp" alt="Arduino" class="categories__image">
             </div>
             <div class="categories__item">
-                <img src="img/seedstudio.webp" alt="seedStudio" class="categories__image">
+                <img src="img/seedstudio.webp" alt="Seeed Studio" class="categories__image">
             </div>
             <div class="categories__item">
-                <img src="img/unitelectronics.webp" alt="seedStudio" class="categories__image">
+                <img src="img/unitelectronics.webp" alt="Unit Electronics" class="categories__image">
             </div>
         </div>
 
-        <!-- Tercera sección de categorías con precios y botón de carrito -->
         <div class="categories__header">
-            <h3 class="categories__title">Kit de Electronica y Robotica</h3>
+            <h3 class="categories__title">Kit de Electrónica y Robótica</h3>
         </div>
-
         <div class="categories__grid">
             <div class="categories__item">
-                <img src="img/superkit.jpg" alt="superkit" class="categories__image">
+                <img src="img/superkit.jpg" alt="SuperKit Arduino" class="categories__image">
                 <span class="categories__label">SuperKit</span>
                 <p class="categories__price">$699.00</p>
-                <button class="categories__button">Añadir Al Carrito</button>
+                <div class="categories__item-buttons">
+                    <button class="categories__button categories__button--details" onclick="location.href='product-detail.html'">Ver Detalle</button>
+                    <button class="categories__button">Añadir Al Carrito</button>
+                </div>
             </div>
             <div class="categories__item">
-                <img src="img/NVIDIA.webp" alt="nvidia" class="categories__image">
+                <img src="img/NVIDIA.webp" alt="Kit NVIDIA" class="categories__image">
                 <span class="categories__label">NVIDIA</span>
                 <p class="categories__price">$699.00</p>
-                <button class="categories__button">Añadir Al Carrito</button>
+                <div class="categories__item-buttons">
+                    <button class="categories__button categories__button--details" onclick="location.href='product-detail.html'">Ver Detalle</button>
+                    <button class="categories__button">Añadir Al Carrito</button>
+                </div>
             </div>
             <div class="categories__item">
-                <img src="img/RASPBERRY.webp" alt="rasberry" class="categories__image">
-                <span class="categories__label">RASPBERRY</span>
+                <img src="img/RASPBERRY.webp" alt="Kit Raspberry Pi" class="categories__image">
+                <span class="categories__label">Raspberry</span>
                 <p class="categories__price">$699.00</p>
-                <button class="categories__button">Añadir Al Carrito</button>
+                <div class="categories__item-buttons">
+                    <button class="categories__button categories__button--details" onclick="location.href='product-detail.html'">Ver Detalle</button>
+                    <button class="categories__button">Añadir Al Carrito</button>
+                </div>
             </div>
             <div class="categories__item">
-                <img src="img/ARDUINO.webp" alt="arduino" class="categories__image">
-                <span class="categories__label">ARDUINO</span>
+                <img src="img/ARDUINO.webp" alt="Kit Arduino" class="categories__image">
+                <span class="categories__label">Arduino</span>
                 <p class="categories__price">$699.00</p>
-                <button class="categories__button">Añadir Al Carrito</button>
+                <div class="categories__item-buttons">
+                    <button class="categories__button categories__button--details" onclick="location.href='product-detail.html'">Ver Detalle</button>
+                    <button class="categories__button">Añadir Al Carrito</button>
+                </div>
             </div>
             <div class="categories__item">
-                <img src="img/seedstudio.webp" alt="seedStudio" class="categories__image">
+                <img src="img/seedstudio.webp" alt="Kit Seeed Studio" class="categories__image">
                 <span class="categories__label">SeedStudio</span>
                 <p class="categories__price">$699.00</p>
-                <button class="categories__button">Añadir Al Carrito</button>
+                <div class="categories__item-buttons">
+                    <button class="categories__button categories__button--details" onclick="location.href='product-detail.html'">Ver Detalle</button>
+                    <button class="categories__button">Añadir Al Carrito</button>
+                </div>
             </div>
             <div class="categories__item">
-                <img src="img/unitelectronics.webp" alt="seedStudio" class="categories__image">
-                <span class="categories__label">Unite Electronics</span>
+                <img src="img/unitelectronics.webp" alt="Kit Unit Electronics" class="categories__image">
+                <span class="categories__label">Unit Electronics</span>
                 <p class="categories__price">$699.00</p>
-                <button class="categories__button">Añadir Al Carrito</button>
+                <div class="categories__item-buttons">
+                    <button class="categories__button categories__button--details" onclick="location.href='product-detail.html'">Ver Detalle</button>
+                    <button class="categories__button">Añadir Al Carrito</button>
+                </div>
             </div>
         </div>
-
     </section>
-
 </main>
 
-<!-- Pie de página -->
-<footer class="footer">
-    <p class="footer__text">&copy; 2025 SmartPoint. Todos los derechos reservados.</p>
-</footer>
+<div id="footer-container"></div>
 
-<!-- Scripts JS -->
 <script src="app.js"></script>
-<!-- Script para cargar dinámicamente el header -->
 <script src="load-header.js"></script>
+<script src="load-footer.js"></script>
 </body>
 </html>

@@ -3,16 +3,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (form) {
         form.addEventListener('submit', function(event) {
             let isValid = true;
-            // Ejemplo de validación simple (se puede expandir)
-            const fullName = document.getElementById('fullName');
-            if (fullName.value.trim() === '') {
-                isValid = false;
-                // Aquí se podría agregar lógica para mostrar un mensaje de error personalizado
-                console.error('El nombre es obligatorio.');
-            }
+            const requiredFields = form.querySelectorAll('[required]');
+
+            requiredFields.forEach(field => {
+                let hasError = false;
+                if (field.type === 'checkbox' && !field.checked) {
+                    hasError = true;
+                } else if (field.value.trim() === '') {
+                    hasError = true;
+                }
+
+                if (hasError) {
+                    isValid = false;
+
+                } else {
+
+                }
+            });
 
             if (!isValid) {
-                event.preventDefault(); // Detiene el envío del formulario si no es válido
+                event.preventDefault();
                 alert('Por favor, completa todos los campos obligatorios.');
             }
         });
