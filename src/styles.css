@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Manejo de modelo de caja consistente */
+}
+
+:root {
+    /* Paleta de colores Modo Oscuro (Refinada) */
+    --primary-color: #3b82f6;      /* Azul para acentos y botones */
+    --secondary-color: #10b981;    /* Verde esmeralda */
+    --background-color: #111827;  /* Azul marino muy oscuro */
+    --surface-color: #1f2937;     /* Gris azulado oscuro */
+    --text-color: #d1d5db;         /* Gris claro para texto */
+    --text-color-secondary: #9ca3af; /* Gris medio */
+    --border-color: #374151;        /* Gris oscuro para bordes */
+    --header-height: 60px;
+    --font-family: "Segoe UI", system-ui, sans-serif; /* Fuentes modernas */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--font-family); /* Tipografía base heredada */
+    background-color: var(--background-color); /* Fondo oscuro */
+    color: var(--text-color); /* Texto claro */
+    line-height: 1.6;
+    font-size: 16px;
+}

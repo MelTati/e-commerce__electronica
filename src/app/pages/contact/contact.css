@@ -1,0 +1,77 @@
+.main-container {
+  max-width: 1200px; margin: 3rem auto; padding: 0 1rem; /* Más margen superior */
+}
+
+.contact-section {
+  display: flex; justify-content: center; align-items: center; padding: 2rem 0;
+}
+
+.contact-card {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem 3rem; /* Más padding horizontal */
+  width: 100%; max-width: 650px; /* Ligeramente más estrecho */
+  border: 1px solid var(--border-color);
+  border-top: 4px solid var(--secondary-color);
+}
+
+.contact-card h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-color); /* Título en color de texto normal */
+  text-align: center; margin: 0 0 1rem 0; font-size: 1.8rem; font-weight: 600;
+}
+
+.contact-intro {
+  text-align: center; color: var(--text-color-secondary);
+  margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.6;
+}
+
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label {
+  display: block; font-weight: 500;
+  margin-bottom: 0.6rem; color: var(--text-color); font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md); /* Bordes redondeados */
+  font-size: 1rem; font-family: var(--font-family);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--background-color); /* Fondo oscuro */
+  color: var(--text-color);
+}
+.form-group select { appearance: none; /* Estilo personalizado para select */ }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none; border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); /* Sombra de foco azul */
+}
+
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.btn-submit {
+  width: 100%; padding: 0.9rem 1.5rem; /* Ligeramente más padding */
+  font-size: 1rem; font-weight: 600;
+  color: #fff; background-color: var(--primary-color);
+  border: none; border-radius: var(--border-radius-md);
+  cursor: pointer; transition: background-color 0.2s, transform 0.1s;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.btn-submit:hover { background-color: #2563eb; } /* Azul más oscuro al hover */
+.btn-submit:active { transform: scale(0.98); } /* Efecto al presionar */
+
+@media (max-width: 768px) {
+  .main-container { margin: 1.5rem auto; }
+  .contact-card { padding: 2rem 1.5rem; }
+  .contact-card h1 { font-size: 1.6rem; }
+  .contact-intro { font-size: 0.95rem; }
+}

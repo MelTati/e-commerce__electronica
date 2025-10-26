@@ -1,0 +1,54 @@
+<header class="header">
+    <div class="header__top">
+        <p class="header__info">Envío gratis en compras mayores a $50.00</p>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a routerLink="/location" class="header__nav-list">Ubicanos</a></li>
+                <li class="header__nav-item"><a routerLink="/contact" class="header__nav-link">Contacto</a></li>
+                <li class="header__nav-item"><a routerLink="/about" class="header__nav-link">Acerca de</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="header__container" id="main-header-container">
+        <div class="header__logo">
+            <a routerLink=""><img src="assets/img/logo.png" alt="Logo de SmartPoint"></a>
+        </div>
+
+        <div class="header__search">
+            <input id="search" type="search" class="header__search-input" placeholder="Busca tus productos..." />
+        </div>
+
+        <div class="header__user-actions">
+            <div class="header__user">
+                <a routerLink= "/login" class="header__user-link header__user-link--login">Iniciar Sesión</a>
+                <a href="account.html" class="header__user-link header__user-link--register">Registrarse</a>
+            </div>
+            <a href="#cart" class="header__cart" aria-label="Carrito de compras">
+                <span class="header__cart-total">$0.00</span>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <button class="header__hamburger" id="hamburger-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <nav class="header__menu" id="main-menu">
+        <ul class="header__menu-list">
+            <li class="header__menu-item"><a href="#services" class="header__menu-link"><i class="fa-solid fa-bars"></i> Servicios</a></li>
+            <li class="header__menu-item"><a href="#smd" class="header__menu-link"><i class="fa-solid fa-microchip"></i> SMD</a></li>
+            <li class="header__menu-item"><a href="#components" class="header__menu-link"><i class="fa-solid fa-plug"></i> Componentes</a></li>
+            <li class="header__menu-item"><a href="#kits" class="header__menu-link"><i class="fa-solid fa-box"></i> Kits</a></li>
+            <li class="header__menu-item"><a href="#brands" class="header__menu-link"><i class="fa-solid fa-tags"></i> Marcas</a></li>
+            <li class="header__menu-item"><a href="#lab" class="header__menu-link"><i class="fa-solid fa-flask"></i> Laboratorio</a></li>
+            <li class="header__menu-item"><a href="#energy" class="header__menu-link"><i class="fa-solid fa-bolt"></i> Energía</a></li>
+            <li class="header__menu-item"><a href="#cards" class="header__menu-link"><i class="fa-solid fa-credit-card"></i> Tarjetas</a></li>
+            <li class="header__menu-item"><a href="#sensors" class="header__menu-link"><i class="fa-solid fa-satellite-dish"></i> Sensores</a></li>
+            <li class="header__menu-item"><a href="#modules" class="header__menu-link"><i class="fa-solid fa-cubes"></i> Módulos</a></li>
+            <li class="header__menu-item"><a href="#opto" class="header__menu-link"><i class="fa-solid fa-lightbulb"></i> Optoelectrónica</a></li>
+            <li class="header__menu-item"><a href="#robotics" class="header__menu-link"><i class="fa-solid fa-robot"></i> Robótica</a></li>
+            <li class="header__menu-item"><a href="#outlet" class="header__menu-link"><i class="fa-solid fa-tags"></i> Outlet</a></li>
+        </ul>
+    </nav>
+</header>
