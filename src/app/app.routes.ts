@@ -10,7 +10,7 @@ import { Register } from './pages/register/register';
 import { Location } from './pages/location/location';
 import { About} from './pages/about/about';
 import { Contact} from './pages/contact/contact';
-
+//rutas de busqueda
 export const routes: Routes = [
   { path: '', component: Home },                     // Página principal
   { path: 'products', component: Products },         // Lista de productos
