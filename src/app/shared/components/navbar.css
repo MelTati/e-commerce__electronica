@@ -1,0 +1,166 @@
+.header {
+    background-color: var(--surface-color); /* Color de fondo para superficies */
+    box-shadow: var(--shadow-md); /* Sombra media */
+    border-bottom: 1px solid var(--border-color); /* Borde inferior sutil */
+    position: sticky; /* Fijo al hacer scroll */
+    top: 0;
+    z-index: 50; /* Por encima de otros elementos */
+}
+
+.header__top {
+    background: var(--secondary-color); /* Fondo verde */
+    color: #fff;
+    padding: 0.4rem 1.5rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__nav-list { 
+    list-style: none; 
+    display: flex; 
+    gap: 1rem; 
+}
+
+.header__nav-list a { 
+    color: #fff; 
+    text-decoration: none; 
+    transition: opacity 0.2s; 
+}
+
+.header__nav-list a:hover { 
+    opacity: 0.8; 
+}
+
+.header__container {
+    display: flex; /* Alineación horizontal */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centrado vertical */
+    height: var(--header-height); /* Altura definida en variables */
+    max-width: 1280px; /* Ancho máximo para centrar en pantallas grandes */
+    margin: auto; /* Centrado horizontal */
+    padding: 0 1.5rem; /* Espaciado lateral */
+    gap: 1.5rem; /* Espacio entre elementos internos */
+}
+
+.header__logo img { 
+    height: 40px; 
+}
+
+.header__search { 
+    flex-grow: 1; 
+    max-width: 400px; 
+}
+
+.header__search input { 
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md); /* Bordes redondeados */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: border-color 0.2s, box-shadow 0.2s; /* Transición suave */
+}
+
+.header__search input:focus {
+    outline: none; /* Quitar borde por defecto */
+    border-color: var(--primary-color); /* Borde azul */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4); /* Sombra azul */
+}
+
+.header__user-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.5rem; 
+}
+
+.header__user { 
+    display: flex; 
+    gap: 1.2rem; 
+}
+
+.header__user a { 
+    text-decoration: none;
+    color: var(--secondary-color); /* Color verde */
+    white-space: nowrap;
+    transition: color 0.3s;
+    font-weight: 600; /* Negrita */
+    font-size: 0.9rem;
+}
+
+.header__user a:hover { 
+    color: #02cba4; 
+}
+
+.header__cart { 
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.header__cart:hover { 
+    color: var(--primary-color); 
+}
+
+.header__cart i { 
+    font-size: 1.2rem; 
+}
+
+.header__hamburger { 
+    display: none;
+    background: none; 
+    border: none;
+    color: var(--text-color);
+    font-size: 1.6rem; 
+    cursor: pointer; 
+    padding: 0.5rem;
+}
+
+.header__menu { 
+    background: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    overflow-x: auto; /* Scroll horizontal si no cabe */
+    white-space: nowrap;
+    -ms-overflow-style: none; /* Ocultar scrollbar IE/Edge */
+    scrollbar-width: none; /* Ocultar scrollbar Firefox */
+}
+
+.header__menu::-webkit-scrollbar { 
+    display: none; 
+}
+
+.header__menu-list { 
+    list-style: none; 
+    display: flex;
+    flex-wrap: nowrap; /* Siempre en una línea */
+    gap: 1.5rem;
+    justify-content: flex-start; /* Alinear al inicio */
+    padding: 0.8rem 1.5rem;
+    max-width: 1280px; /* Ancho máximo centrado */
+    margin: auto;
+}
+
+.header__menu-list li a { 
+    text-decoration: none; 
+    color: var(--text-color-secondary); /* Color gris por defecto */
+    display: flex; 
+    align-items: center; 
+    gap: 0.4rem;
+    font-size: 0.85rem; 
+    transition: color 0.2s;
+    padding: 0.3rem 0;
+    white-space: nowrap;
+}
+
+.header__menu-list li a:hover { 
+    color: var(--secondary-color); 
+}
+
+.header__menu-list li a i { 
+    font-size: 0.9rem; 
+}

@@ -1,0 +1,129 @@
+.login {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+}
+
+.login__image {
+  flex: 1;
+  background: url('/src/assets/img/electronica.png') no-repeat center center / cover; /* Background cover */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login__image-container {
+  text-align: center;
+  padding: 2rem 3rem;
+  background-color: rgba(31, 41, 55, 0.9); /* Surface con transparencia */
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.login__title {
+  font-size: 2rem; /* Más pequeño */
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.login__form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login__form-container {
+  width: 100%;
+  max-width: 400px; /* Ligeramente más pequeño */
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  background: var(--surface-color);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+}
+
+.login__subtitle {
+  color: var(--text-color);
+  margin-bottom: 2.5rem; /* Más espacio */
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.login__form-group {
+  margin-bottom: 1.8rem; /* Menos espacio */
+}
+
+.login__floating-label { position: relative; }
+
+.login__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border-color); /* Borde más sutil */
+  padding: 1.2rem 0.5rem 0.6rem; /* Ajustar padding para label */
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-color);
+  transition: border-color 0.2s ease;
+}
+.login__input:focus {
+  outline: none;
+  border-bottom-color: var(--secondary-color);
+}
+
+.login__label {
+  position: absolute;
+  top: 1rem; left: 0.5rem;
+  color: var(--text-color-secondary);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+.login__input:focus + .login__label,
+.login__input:not(:placeholder-shown) + .login__label {
+  top: -0.2rem; /* Ajuste para subir */
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+}
+
+.login__button {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  background-color: var(--secondary-color);
+  font-weight: 600; /* Más peso */
+  border: none;
+  border-radius: var(--border-radius-md); /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-size: 1rem;
+  margin-top: 1rem; /* Espacio antes del botón */
+}
+.login__button:hover {
+  background: #059669; /* Verde más oscuro al hover */
+  transform: translateY(-2px);
+}
+
+.login__forgot {
+  margin-top: 1.5rem; /* Más espacio */
+  text-align: center;
+}
+.login__forgot-link {
+  color: var(--primary-color); /* Azul para enlace secundario */
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.login__forgot-link:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .login__image { display: none; }
+  .login__form { padding: 1rem; }
+  .login__form-container { box-shadow: none; max-width: 100%; }
+}
