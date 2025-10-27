@@ -1,0 +1,54 @@
+<section class="categories__grid product-grid">
+  @for (product of (products$ | async); track product.id) {
+    <mat-card class="categories__item product-card">
+      <div class="product__image-container">
+        <img mat-card-image
+             [ngSrc]="product.imageUrl"
+             [alt]="product.label"
+             class="categories__image"
+             width="300"
+             height="300" />
+
+        <div class="categories__quick-view-wrapper">
+          <button mat-stroked-button
+                  color="accent"
+                  class="categories__button categories__button--quick-view"
+                  (click)="openQuickView(product.id)">
+            Vista Rápida
+          </button>
+
+          <a mat-stroked-button
+             color="primary"
+             class="categories__button categories__button--detail-link"
+             [routerLink]="getProductDetailLink(product.id)">
+            Ver Detalle
+          </a>
+        </div>
+      </div>
+
+      <mat-card-content>
+        <span class="categories__label">{{ product.label }}</span>
+        <p class="categories__price">MXN {{ product.price }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-flat-button
+                color="primary"
+                class="categories__button categories__button--full-width"
+                (click)="addToCart(product)">
+          Añadir Al Carrito
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  } @empty {
+    <div class="categories__item mat-card full-width-item">
+      <p>No se encontraron productos disponibles.</p>
+    </div>
+  }
+</section>
+
+<app-quick-view-modal
+  [product]="selectedProduct"
+  [isVisible]="isQuickViewVisible"
+  (close)="closeQuickView()">
+</app-quick-view-modal>

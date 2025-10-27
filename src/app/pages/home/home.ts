@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewChildren, QueryList, ElementRef, ChangeDetectorRef } from '@angular/core';
-import {Categories} from '../../components/categories/categories';
+import {CategoriesComponent} from '../../components/categories/categories';
 // Home es la pagina principal que muestra un carrusel de imagenes.
 // Permite navegar entre las imagenes usando botones y puntos indicadores.
 // Usa ViewChildren para acceder a los elementos del DOM despues de que la vista ha sido inicializada.
@@ -11,7 +11,7 @@ import {Categories} from '../../components/categories/categories';
   selector: 'app-home',
   standalone: true,
   templateUrl: './home.html',
-  imports: [Categories],
+  imports: [CategoriesComponent],
   styleUrls: ['./home.css']
 })
 export class Home implements AfterViewInit {

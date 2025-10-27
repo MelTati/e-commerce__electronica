@@ -1,0 +1,44 @@
+@if (isVisible && product) {
+  <div class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-button" (click)="closeModal()">×</button>
+
+      <div class="modal__header">
+        <h2 class="modal__title">{{ product.title }}</h2>
+        <p class="modal__price">${{ product.price | number:'1.2-2' }} {{ product.currency }}</p>
+      </div>
+
+      <div class="modal__body">
+        <p><strong>Disponibilidad:</strong> {{ product.availability }}</p>
+
+        <h3 class="details-title">Especificaciones Técnicas</h3>
+
+        <ul class="product-details-list">
+          @for (key of getDetailKeys(product.details); track key; let i = $index) {
+            @if (i < 2 || showFullDetails) {
+              <li>
+                <strong>{{ key }}:</strong> {{ product.details[key] }}
+              </li>
+            }
+          }
+        </ul>
+
+        @if (getDetailKeys(product.details).length > 2) {
+          <button
+            class="toggle-button"
+            (click)="toggleDetails()">
+
+            {{ showFullDetails ?
+            'Ocultar Detalles' :
+            'Mostrar Todos los Detalles (+' + (getDetailKeys(product.details).length - 2) + ')' }}
+          </button>
+        }
+      </div>
+
+      <div class="modal-actions">
+        <button class="add-to-cart-button" (click)="closeModal()">Añadir al Carrito</button>
+        <button class="continue-button" (click)="closeModal()">Cerrar Vista</button>
+      </div>
+    </div>
+  </div>
+}

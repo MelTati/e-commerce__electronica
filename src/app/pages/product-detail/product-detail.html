@@ -1,1 +1,50 @@
-<p>product-detail works!</p>
+<main class="main product-detail">
+
+  @if (isLoading) {
+    <div class="loading-message">
+      Cargando detalles del producto ID: {{ productId }}...
+    </div>
+  }
+
+  @if (!isLoading && product) {
+
+    <section class="product">
+
+      <div class="product__img-wrapper">
+        <img [src]="product.imgURL"
+             [alt]="'Imagen de ' + product.title"
+             class="product__image" />
+      </div>
+
+      <div class="product__details">
+
+        <h1 class="product__title">{{ product.title }}</h1>
+
+        <p class="product__price">${{ product.price | number:'1.2-2' }} {{ product.currency }}</p>
+
+        <div class="product__info">
+
+          <p><strong>Disponibilidad:</strong> {{ product.availability }}</p>
+
+          <h3>Especificaciones Técnicas</h3>
+
+          <ul>
+            @for (key of getDetailKeys(product.details); track key) {
+              <li>
+                <strong>{{ key }}:</strong> {{ product.details[key] }}
+              </li>
+            }
+          </ul>
+
+          <button class="product__button" (click)="handleAddToCart()">Añadir al carrito</button>
+        </div>
+      </div>
+    </section>
+  }
+
+  @else if (!isLoading && !product) {
+    <div class="error-message">
+      Producto no encontrado. La ID {{ productId }} no es válida.
+    </div>
+  }
+</main>

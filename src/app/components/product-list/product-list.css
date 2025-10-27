@@ -1,24 +1,5 @@
-.main__categories {
-  margin-top: 4rem;
-  padding: 5rem 10rem;
-}
-
-.categories__header {
-  margin-bottom: 1.5rem;
-  border-left: 4px solid var(--secondary-color);
-  padding-left: 1rem;
-}
-
-.categories__title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-color);
-  letter-spacing: -0.5px;
-}
-
 .categories__grid {
   display: grid;
-  /* Ajusta el ancho mínimo para el tamaño de las tarjetas */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
   justify-items: center;
@@ -38,10 +19,9 @@
   justify-content: flex-start;
   height: 100%;
   width: 100%;
-  max-width: 280px; /* Ancho máximo ajustado para productos */
+  max-width: 280px;
 }
 
-/* Hover effect */
 .categories__grid .categories__item:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg) !important;
@@ -97,11 +77,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-
   z-index: 10;
 }
 
@@ -121,20 +99,15 @@
   border: 1px solid var(--primary-color) !important;
 }
 
-/* mat-card-actions se comporta como contenedor de bloque */
 .categories__item.mat-card mat-card-actions {
   margin-top: auto;
   display: block;
   padding: 0 1rem 1rem 1rem !important;
 }
 
-/* Asegura que el botón de Añadir al Carrito ocupe el ancho completo */
 .categories__button.categories__button--full-width {
   width: 100%;
 }
-
-
-/* Estilos generales de botones (aplicables a todos) */
 
 .categories__button {
   padding: 0.6rem 1rem !important;
@@ -161,9 +134,5 @@
   .categories__grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 1rem;
-  }
-
-  .main__categories {
-    padding: 1rem 0;
   }
 }
