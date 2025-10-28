@@ -1,17 +1,29 @@
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 5rem;
-  background: #111827;
-  color: var(--text-color-secondary);
-  margin-top: 4rem;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.85rem;
+/* En footer.css o styles.css */
+.footer__social {
+  margin-top: 1rem; /* Espacio arriba */
+  text-align: center; /* Centrar contenido */
 }
 
-@media (max-width: 768px) {
-  .footer {
-    margin-top: 2rem;
-    padding: 1rem 1rem;
-  }
+.footer__social p {
+  margin-bottom: 0.5rem; /* Espacio debajo de "Síguenos:" */
+  color: var(--text-color-secondary);
+}
+
+.social-icons a {
+  margin: 0 0.5rem; /* Espacio entre iconos */
+  display: inline-block; /* Para que el margen funcione bien */
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.social-icons a:hover {
+  opacity: 1; /* Opacidad completa al pasar el ratón */
+}
+
+.social-icons img {
+  vertical-align: middle; /* Alinear verticalmente las imágenes */
+}
+.footer__text {
+  margin-top: 0.5rem; /* Ajusta el valor como prefieras */
+  /* ... otros estilos que ya tengas ... */
 }
