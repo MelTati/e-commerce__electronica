@@ -3,11 +3,11 @@
     <mat-card class="categories__item product-card">
       <div class="product__image-container">
         <img mat-card-image
-             [ngSrc]="product.imageUrl"
-             [alt]="product.label"
-             class="categories__image"
-             width="300"
-             height="300" />
+            [ngSrc]="product.imageUrl"
+            [alt]="product.label"
+            [title]="product.label" class="categories__image"
+            width="300"
+            height="300" />
 
         <div class="categories__quick-view-wrapper">
           <button mat-stroked-button
@@ -16,13 +16,6 @@
                   (click)="openQuickView(product.id)">
             Vista Rápida
           </button>
-
-          <a mat-stroked-button
-             color="primary"
-             class="categories__button categories__button--detail-link"
-             [routerLink]="getProductDetailLink(product.id)">
-            Ver Detalle
-          </a>
         </div>
       </div>
 

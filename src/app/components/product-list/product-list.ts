@@ -12,12 +12,11 @@ import { Department } from '../../interfaces/department.interface';
 import { Ecosystem } from '../../interfaces/ecosystem.interface';
 import { Product } from '../../interfaces/product-detail.interface';
 import { QuickViewModalComponent} from '../quick-view-modal/quick-view-modal.component';
-import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [QuickViewModalComponent,CommonModule, MatGridListModule, MatCardModule, MatButtonModule, RouterLink, NgOptimizedImage],
+  imports: [QuickViewModalComponent,CommonModule, MatGridListModule, MatCardModule, MatButtonModule, NgOptimizedImage],
   templateUrl: './product-list.html',
   styleUrls: ['./product-list.css']
 })
@@ -61,10 +60,6 @@ export class ProductListComponent implements OnInit {
   closeQuickView(): void {
     this.isQuickViewVisible = false;
     this.selectedProduct = null;
-  }
-
-  getProductDetailLink(id: number): string {
-    return `/product/${id}`;
   }
 
   addToCart(product: ProductListItem): void {
