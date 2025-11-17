@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
-import { Products } from './pages/products/products';
 import ProductDetail from './pages/product-detail/product-detail';
 import { Cart } from './pages/cart/cart';
 import { Checkout } from './pages/checkout/checkout';
@@ -15,7 +14,6 @@ import { Contact} from './pages/contact/contact';
 //rutas de busqueda
 export const routes: Routes = [
   { path: '', component: Home },                     // Página principal
-  { path: 'products', component: Products },         // Lista de productos
   { path: 'product/:id', component: ProductDetail}, // Detalle de producto
   { path: 'cart', component: Cart },                 // Carrito
   { path: 'checkout', component: Checkout},         // Checkout

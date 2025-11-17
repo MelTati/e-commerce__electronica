@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModul
   styleUrls: ['./register.css']
 })
 
-export class RegisterComponent {
+export class Register{
   
   readonly registerForm: FormGroup;
 

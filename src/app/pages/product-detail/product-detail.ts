@@ -22,6 +22,8 @@ export default class ProductDetail implements OnInit {
   selectedIndex = 0;
   showLightbox = false;
 
+  cantidad: number = 1;
+
   @ViewChild('lens') zoomLens!: ElementRef<HTMLDivElement>;
   @ViewChild('result') zoomResult!: ElementRef<HTMLDivElement>;
   @ViewChild('mainImage') mainImage!: ElementRef<HTMLImageElement>;
@@ -39,6 +41,7 @@ export default class ProductDetail implements OnInit {
         switchMap((params: ParamMap) => {
           const idString = params.get('id');
           this.productId = idString ? +idString : null;
+
           this.isLoading = true;
           this.product = null;
 
@@ -54,22 +57,47 @@ export default class ProductDetail implements OnInit {
 
           if (this.product) {
             this.selectedIndex = 0;
+
             this.selectedImage =
-              this.product.imgCarrusel.length > 0
+              this.product.imgCarrusel?.length
                 ? this.product.imgCarrusel[0]
-                : this.product.imgURL;
+                : this.product.imgURL || null;
+
+            // Reinicia la cantidad si el producto cambia
+            this.cantidad = 1;
           }
+        },
+        error: () => {
+          this.isLoading = false;
+          this.product = null;
         }
       });
   }
 
-  getDetailKeys(obj: any): string[] {
-    return Object.keys(obj || {});
+  incrementCantidad() {
+    if (!this.product) return;
+    if (this.cantidad < this.product.stock) {
+      this.cantidad++;
+    }
   }
 
-  handleAddToCart(): void {
+  decrementCantidad() {
+    if (this.cantidad > 1) {
+      this.cantidad--;
+    }
+  }
+
+  getDetailKeys(obj: any): string[] {
+    return obj ? Object.keys(obj) : [];
+  }
+
+  addToCart(): void {
     if (!this.product) return;
-    this.detailService.addToCart(this.product).subscribe();
+
+    this.detailService.addToCart({
+      ...this.product,
+      cantidad: this.cantidad
+    }).subscribe();
   }
 
   setMainImage(index: number): void {
@@ -80,6 +108,7 @@ export default class ProductDetail implements OnInit {
 
   prevImage(): void {
     if (!this.product) return;
+
     this.selectedIndex =
       this.selectedIndex > 0
         ? this.selectedIndex - 1
@@ -90,6 +119,7 @@ export default class ProductDetail implements OnInit {
 
   nextImage(): void {
     if (!this.product) return;
+
     this.selectedIndex =
       this.selectedIndex < this.product.imgCarrusel.length - 1
         ? this.selectedIndex + 1
@@ -105,10 +135,8 @@ export default class ProductDetail implements OnInit {
     const lens = this.zoomLens.nativeElement;
     const result = this.zoomResult.nativeElement;
 
-    result.style.opacity = '1';
-    lens.style.opacity = '1';
-
     const rect = img.getBoundingClientRect();
+
     const x = event.pageX - rect.left - window.scrollX - lens.offsetWidth / 2;
     const y = event.pageY - rect.top - window.scrollY - lens.offsetHeight / 2;
 
@@ -124,21 +152,27 @@ export default class ProductDetail implements OnInit {
     const cx = result.offsetWidth / lens.offsetWidth;
     const cy = result.offsetHeight / lens.offsetHeight;
 
+    result.style.opacity = '1';
+    lens.style.opacity = '1';
+
     result.style.backgroundImage = `url('${this.selectedImage}')`;
     result.style.backgroundPosition = `-${lensX * cx}px -${lensY * cy}px`;
     result.style.backgroundSize = `${img.width * cx}px ${img.height * cy}px`;
   }
 
   createLens() {
-    this.zoomLens.nativeElement.style.opacity = "1";
-    this.zoomResult.nativeElement.style.opacity = "1";
+    if (!this.zoomLens || !this.zoomResult) return;
+    this.zoomLens.nativeElement.style.opacity = '1';
+    this.zoomResult.nativeElement.style.opacity = '1';
   }
 
   removeLens() {
-    this.zoomLens.nativeElement.style.opacity = "0";
-    this.zoomResult.nativeElement.style.opacity = "0";
+    if (!this.zoomLens || !this.zoomResult) return;
+    this.zoomLens.nativeElement.style.opacity = '0';
+    this.zoomResult.nativeElement.style.opacity = '0';
   }
 
+  /** TOUCH Swipe */
   @HostListener('touchstart', ['$event'])
   onTouchStart(event: TouchEvent) {
     this.touchStartX = event.changedTouches[0].screenX;

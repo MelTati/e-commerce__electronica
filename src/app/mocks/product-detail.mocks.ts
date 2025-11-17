@@ -6,13 +6,14 @@ export const MOCK_PRODUCTS_DETAILS: Product[] = [
     id: 1,
     title: '10 cm Cable Dupont Hembra-Hembra 40 pines',
     price: 20.00,
+    stock: 150,
     imgURL: 'assets/img/superkit.jpg',
     imgCarrusel: [
       'assets/img/superkit.jpg',
       'assets/img/superkit.jpg',
       'assets/img/superkit.jpg',
     ],
-    availability: 'Hay existencias',
+    cantidad: 1,
     details: {
       'Calibre del cable': '26 AWG',
       'Capacidad de corriente': '0.36 A',
@@ -26,13 +27,14 @@ export const MOCK_PRODUCTS_DETAILS: Product[] = [
     id: 2,
     title: 'Terminal Unión Rápida de Palanca (2 Vías)',
     price: 35.00,
+    stock: 80,
     imgURL: 'assets/img/NVIDIA.webp' ,
     imgCarrusel: [
       'assets/img/NVIDIA.webp',
       'assets/img/NVIDIA.webp',
       'assets/img/NVIDIA.webp',
     ],
-    availability: 'Hay existencias',
+    cantidad: 1,
     details: {
       'Tensión Nominal': '400 V',
       'Corriente Nominal': '32 A',

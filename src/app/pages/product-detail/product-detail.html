@@ -52,7 +52,6 @@
 
       </section>
 
-
       <section class="product__details">
 
         <h1 class="product__title">{{ product.title }}</h1>
@@ -62,8 +61,6 @@
         </p>
 
         <div class="product__info">
-
-          <p><strong>Disponibilidad:</strong> {{ product.availability }}</p>
 
           <h3 class="product__specs-title">Especificaciones Técnicas</h3>
 
@@ -75,11 +72,35 @@
             }
           </ul>
 
-          <button class="product__button" (click)="handleAddToCart()">
-            Añadir al carrito
-          </button>
+          <p class="product__stock">
+            <strong>Cantidad disponible:</strong> {{ product.stock }} unidades
+          </p>
+
+          <!-- CANTIDAD CORREGIDA -->
+          <div class="cantidad-container">
+            <label for="cantidad">Cantidad *</label>
+            <div class="cantidad-control">
+              <button id="decrement" (click)="decrementCantidad()">−</button>
+
+              <input 
+                type="text" 
+                id="cantidad" 
+                [value]="cantidad" 
+                readonly
+              />
+
+              <button id="increment" (click)="incrementCantidad()">+</button>
+            </div>
+          </div>
+
+          <div class="product__actions">
+            <button class="btn btn--primary" (click)="addToCart()">
+              Agregar al Carrito
+            </button>
+          </div>
 
         </div>
+
       </section>
 
     </section>
@@ -91,7 +112,6 @@
     </div>
   }
 
-  <!-- LIGHTBOX -->
   @if (showLightbox) {
     <div class="lightbox" (click)="closeLightbox()">
       <img
