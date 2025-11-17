@@ -1,7 +1,7 @@
-<main class="main product-detail">
+<main class="product-detail">
 
   @if (isLoading) {
-    <div class="loading-message">
+    <div class="product-detail__loading">
       Cargando detalles del producto ID: {{ productId }}...
     </div>
   }
@@ -10,41 +10,96 @@
 
     <section class="product">
 
-      <div class="product__img-wrapper">
-        <img [src]="product.imgURL"
-             [alt]="'Imagen de ' + product.title"
-             class="product__image" />
-      </div>
+      <section class="product-gallery">
 
-      <div class="product__details">
+        <div class="product-gallery__thumbs">
+          @for (img of product.imgCarrusel; track $index) {
+            <img
+              [src]="img"
+              [alt]="'Imagen ' + ($index + 1) + ' de ' + product.title"
+              class="product-gallery__thumb"
+              [class.active]="selectedIndex === $index"
+              (click)="setMainImage($index)"
+            >
+          }
+        </div>
+
+        <div class="img-zoom-container">
+
+          <div class="product-gallery__main">
+
+            <button class="gallery-arrow left" (click)="prevImage()">❮</button>
+
+            <img
+              #mainImage
+              [src]="selectedImage!"
+              [alt]="'Imagen principal de ' + product.title"
+              class="product-gallery__main-image fade"
+              (mousemove)="moveLens($event)"
+              (mouseenter)="createLens()"
+              (mouseleave)="removeLens()"
+              (click)="openLightbox()"
+            >
+
+            <button class="gallery-arrow right" (click)="nextImage()">❯</button>
+
+          </div>
+
+          <div #lens class="img-zoom-lens"></div>
+          <div #result class="img-zoom-result"></div>
+
+        </div>
+
+      </section>
+
+
+      <section class="product__details">
 
         <h1 class="product__title">{{ product.title }}</h1>
 
-        <p class="product__price">${{ product.price | number:'1.2-2' }} {{ product.currency }}</p>
+        <p class="product__price">
+          ${{ product.price | number:'1.2-2' }}
+        </p>
 
         <div class="product__info">
 
           <p><strong>Disponibilidad:</strong> {{ product.availability }}</p>
 
-          <h3>Especificaciones Técnicas</h3>
+          <h3 class="product__specs-title">Especificaciones Técnicas</h3>
 
-          <ul>
+          <ul class="product__specs-list">
             @for (key of getDetailKeys(product.details); track key) {
-              <li>
+              <li class="product__specs-item">
                 <strong>{{ key }}:</strong> {{ product.details[key] }}
               </li>
             }
           </ul>
 
-          <button class="product__button" (click)="handleAddToCart()">Añadir al carrito</button>
+          <button class="product__button" (click)="handleAddToCart()">
+            Añadir al carrito
+          </button>
+
         </div>
-      </div>
+      </section>
+
     </section>
   }
 
   @else if (!isLoading && !product) {
-    <div class="error-message">
+    <div class="product-detail__error">
       Producto no encontrado. La ID {{ productId }} no es válida.
     </div>
   }
+
+  <!-- LIGHTBOX -->
+  @if (showLightbox) {
+    <div class="lightbox" (click)="closeLightbox()">
+      <img
+        class="lightbox__image"
+        [src]="selectedImage!"
+        alt="Vista ampliada"
+      >
+    </div>
+  }
+
 </main>

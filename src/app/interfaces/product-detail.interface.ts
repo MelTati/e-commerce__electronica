@@ -3,7 +3,7 @@ export interface Product {
   title: string;
   price: number;
   imgURL: string;
-  currency: 'MXN' | 'USD';
+  imgCarrusel: string[];
   availability: 'Hay existencias' | 'Agotado';
   details: {
     [key: string]: any;

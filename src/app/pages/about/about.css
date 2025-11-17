@@ -1,6 +1,6 @@
 .about {
   background-color: var(--background-color);
-  padding: 3rem 1.5rem; /* Más padding vertical */
+  padding: 3rem 1.5rem; 
   color: var(--text-color);
 }
 
@@ -10,27 +10,27 @@
 }
 
 .about__title {
-  font-size: 1.75rem; /* Ligeramente más pequeño */
+  font-size: 1.75rem; 
   font-weight: 600;
   color: var(--secondary-color);
-  margin-bottom: 1.5rem; /* Más margen */
-  border-bottom: 1px solid var(--border-color); /* Línea divisoria sutil */
+  margin-bottom: 1.5rem; 
+  border-bottom: 1px solid var(--border-color); 
   padding-bottom: 0.5rem;
 }
 
 .about__content {
   font-size: 1rem;
-  line-height: 1.7; /* Mayor interlineado */
-  color: var(--text-color-secondary); /* Texto secundario por defecto */
+  line-height: 1.7; 
+  color: var(--text-color-secondary); 
 }
 .about__content strong {
-  color: var(--text-color); /* Resaltar negritas */
+  color: var(--text-color); 
   font-weight: 500;
 }
 
 .about__text {
   margin-bottom: 1.2rem;
-  text-align: justify; /* Añadido para justificar el texto */
+  text-align: justify; 
 }
 
 .about__highlight {
@@ -38,9 +38,6 @@
   font-weight: 600;
 }
 
-/* --- NUEVOS ESTILOS AÑADIDOS/MODIFICADOS --- */
-
-/* Ajustes generales */
 .about__section {
   margin-bottom: 2.5rem;
 }
@@ -48,15 +45,14 @@
 .about__subtitle {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #036CD6; /* Usar color primario para subtítulos */
+  color: #036CD6; 
   margin-bottom: 1rem;
 }
 
-/* Opcional: Centrar sección intro */
 .about__section--intro {
   text-align: center;
 }
-.about__image { /* Si añades una imagen en la intro */
+.about__image { 
   max-width: 100%;
   height: auto;
   border-radius: var(--border-radius-md);
@@ -64,19 +60,19 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Nuevo: Sección Misión/Visión en columnas */
+
 .about__section--mission-vision {
   display: grid;
-  grid-template-columns: 1fr; /* 1 columna por defecto */
+  grid-template-columns: 1fr; 
   gap: 2rem;
 }
+
 @media (min-width: 768px) {
   .about__section--mission-vision {
-    grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas grandes */
+    grid-template-columns: 1fr 1fr; 
   }
 }
 
-/* Nuevo: Grid para Valores (Reemplaza .values__list) */
 .values__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -84,7 +80,7 @@
   margin-top: 1.5rem;
 }
 
-/* Nuevo: Tarjeta para Valores (Reemplaza .value__item) */
+
 .value__card {
   background-color: var(--surface-color);
   padding: 1.5rem;
@@ -94,12 +90,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.value__card:hover { /* Efecto hover para las tarjetas */
+.value__card:hover { 
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Nuevo: Estilo para los iconos/emojis */
+
 .value__icon {
   font-size: 2.5rem;
   display: block;
@@ -107,32 +103,28 @@
   color: var(--secondary-color);
 }
 
-/* Modificado: .value__title (sin flex, centrado por la tarjeta) */
 .value__title {
-  /* display: flex; align-items: center; gap: 0.8rem; */ /* Quitamos Flex */
   font-weight: 600;
   color: var(--text-color);
   font-size: 1.1rem;
   margin-bottom: 0.6rem;
 }
 
-/* Modificado: .value__text (texto dentro de la tarjeta) */
 .value__text {
   font-size: 0.9rem;
   color: var(--text-color-secondary);
   line-height: 1.5;
   margin-bottom: 0;
-  padding-left: 0; /* Quitamos padding-left */
-  text-align: center; /* Aseguramos centrado (aunque hereda de card) */
+  padding-left: 0; 
+  text-align: center; 
 }
 
 
-/* --- Founders Section (Estilos originales mantenidos) --- */
 .founders__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
-  margin-top: 1.5rem; /* Ajustado margen */
+  margin-top: 1.5rem; 
 }
 
 .founder__card {
@@ -172,8 +164,17 @@
   color: var(--text-color-secondary);
 }
 
-/* --- Modal Styles (Estilos originales mantenidos) --- */
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(17, 24, 39, 0.9); }
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000; 
+  left: 0;
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(17, 24, 39, 0.9); 
+}
+
 .modal__content {
   margin: auto; display: block;
   max-width: 90%; max-height: 80%;
@@ -194,24 +195,29 @@
   animation: fadeIn 0.4s ease-out; font-size: 0.9rem;
   width: 80%;
 }
-@keyframes zoom { from {transform: translate(-50%, -50%) scale(0.5); opacity: 0;} to {transform: translate(-50%, -50%) scale(1); opacity: 1;} }
+
+@keyframes zoom {
+   from {transform: translate(-50%, -50%) scale(0.5); 
+  opacity: 0;} 
+  to {
+    transform: translate(-50%, -50%) scale(1);
+     opacity: 1;
+    } 
+  }
 @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
 
-/* --- Responsive About (Estilos originales mantenidos y ajustados) --- */
+
 @media (max-width: 768px) {
   .about { padding: 2rem 1rem; }
   .about__title { font-size: 1.5rem; text-align: left; }
   .about__content { font-size: 0.95rem; }
-  /* Mantenemos apilamiento de fundadores */
   .founders__container { grid-template-columns: 1fr; gap: 1.5rem; }
   .founder__card { max-width: 300px; margin: 0 auto; }
-  /* Aseguramos que misión/visión también se apilen (ya lo hacen por defecto) */
-  .about__section--mission-vision {
+ .about__section--mission-vision {
     grid-template-columns: 1fr;
   }
 }
 
-/* --- AÑADIDO: Animaciones (Opcional) --- */
 .about__container > * {
   opacity: 0;
   transform: translateY(20px);
@@ -220,7 +226,6 @@
 .about__container > *:nth-child(1) { animation-delay: 0.1s; }
 .about__container > *:nth-child(2) { animation-delay: 0.2s; }
 .about__container > *:nth-child(3) { animation-delay: 0.3s; }
-/* ... continúa si quieres escalonar más ... */
 
 .values__grid .value__card {
   opacity: 0;
@@ -250,15 +255,15 @@
 
 .mission-vision__image {
   max-width: 100%;
-  max-height: 200px; /* Ajusta la altura máxima */
+  max-height: 200px; 
   height: auto;
   border-radius: var(--border-radius-md);
 }
 
-/* Añade esta regla al final de tu archivo about.css */
+
 .highlight-phrase {
-  color: #036CD6; /* Ejemplo: Verde esmeralda */
-  font-weight: 600; /* Opcional: Si quieres que también esté en negrita */
+  color: #036CD6; 
+  font-weight: 600; 
 }
 
 @keyframes fadeInSlideUp {

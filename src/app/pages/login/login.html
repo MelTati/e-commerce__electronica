@@ -13,7 +13,6 @@
         <p class="login__subtitle">Inicia sesión para continuar</p>
       </div>
 
-      <!-- Email -->
       <div class="login__form-group">
         <div class="login__floating-label">
           <input
@@ -26,13 +25,18 @@
           />
           <label for="login-email" class="login__label">Correo Electrónico</label>
         </div>
-        <div class="login__error" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
-          <small *ngIf="email?.errors?.['required']">El correo es obligatorio.</small>
-          <small *ngIf="email?.errors?.['pattern']">Ingresa un correo válido (ej. usuario@dominio.com).</small>
-        </div>
+        @if (email?.invalid && (email?.dirty || email?.touched)) {
+          <div class="login__error">
+            @if (email?.errors?.['required']) {
+              <small>El correo es obligatorio.</small>
+            }
+            @else if (email?.errors?.['pattern']) {
+              <small>Ingresa un correo válido (ej. usuario@dominio.com).</small>
+            }
+          </div>
+        }
       </div>
 
-      <!-- Contraseña -->
       <div class="login__form-group">
         <div class="login__floating-label">
           <input
@@ -45,15 +49,20 @@
           />
           <label for="login-password" class="login__label">Contraseña</label>
         </div>
-        <div class="login__error" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
-          <small *ngIf="password?.errors?.['required']">La contraseña es obligatoria.</small>
-          <small *ngIf="password?.errors?.['minlength']">
-            La contraseña debe tener al menos {{ password?.errors?.['minlength'].requiredLength }} caracteres.
-          </small>
-        </div>
+        @if (password?.invalid && (password?.dirty || password?.touched)) {
+          <div class="login__error">
+            @if (password?.errors?.['required']) {
+              <small>La contraseña es obligatoria.</small>
+            }
+            @else if (password?.errors?.['minlength']) {
+              <small>
+                La contraseña debe tener al menos {{ password?.errors?.['minlength'].requiredLength }} caracteres.
+              </small>
+            }
+          </div>
+        }
       </div>
 
-      <!-- Botón deshabilitado si el formulario no es válido -->
       <button
         type="submit"
         class="login__button"
